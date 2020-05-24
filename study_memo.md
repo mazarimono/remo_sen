@@ -9,3 +9,10 @@
 
 - 機能説明から
 　- https://gis-oer.github.io/gitbook/book/materials/QGIS/QGIS.html#%E6%A9%9F%E8%83%BD%E8%AA%AC%E6%98%8E
+
+### リモートセンシングとその解析
+
+- https://gis-oer.github.io/gitbook/book/materials/06/06.html
+
+- ランドブラウザのURLが違う　https://landbrowser.airc.aist.go.jp/landbrowser/
+

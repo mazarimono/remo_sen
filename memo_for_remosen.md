@@ -34,12 +34,16 @@ https://www.tellusxdp.com/ja/
 - 国土地理院　GISとは　https://www.gsi.go.jp/GIS/whatisgis.html
 - JAXA https://www.jaxa.jp/
 - 国土交通省　GISホームページ　データダウンロードのページか　https://nlftp.mlit.go.jp/
-- Intro to Python GIS https://automating-gis-processes.github.io/CSC18/
+- Intro to Python GIS https://automating-gis-processes.github.io/CSC18/ 下の導入部分だった(w)
+- Automating GIS-Processes https://automating-gis-processes.github.io/site/2018/
+- 上の2019年　https://automating-gis-processes.github.io/site/master/index.html
+    - 参考資料　https://automating-gis-processes.github.io/site/master/course-info/resources.html
+- PythonでGISデータハンドリング https://qiita.com/mamurata0924/items/23ab860f4d7429207fac
 - Intro to GIS and Spital Analysis https://mgimond.github.io/Spatial/index.html
 - Hands-on satellite Imagery Analysis | Scipy 2018 Tutorial https://www.youtube.com/watch?v=txhjhjWqF7c
     - 2019 https://www.youtube.com/watch?v=j15MryznWn4
 - とらりもんHOME http://pen.envr.tsukuba.ac.jp/~torarimon/
-
+- OSGeo.JP 高品質のオープンソース地理空間ソフトウェアの支援と構築のために設立された
 
 ### 気になった記事
 - 国際航業　画像解析　https://www.jasdim.or.jp/gijutsu/jisuberi_joho/kaiseki/gazou/gazou.html

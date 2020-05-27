@@ -123,6 +123,99 @@ Shapelyのクラスに関して
 
 https://automating-gis-processes.github.io/site/master/notebooks/L2/calculating-distances.html
 
+- GeoDataFrameとのデータフレームがあり、それにジオデータのデータフレームを作成できる。
+- ふむ。確かにshpを読み込んだもののクラスもGeoDataFrameになっている
+- Azimuthal Equidistant projection 正距方位図法　https://ja.wikipedia.org/wiki/%E6%AD%A3%E8%B7%9D%E6%96%B9%E4%BD%8D%E5%9B%B3%E6%B3%95
+    - 簡単に言うと距離を正確に測るための図法のようである。でも方位に関しては適当っぽい。
+    - ちなみにapplyはiterrows()よりめっちゃ早いぞって言っている
+‐ Before exporting the data it is always good (basically necessary) to determine the coordinate reference system (projection) for the GeoDataFrame. 
+    - どの系列で作られたデータか確認するのは大事だよ
+‐ なければつけよう
+    - We passed the coordinates as latitude and longitude decimal degrees, so the correct CRS is WGS84 (epsg code: 4326).
+
+    new_data.crs = CRS.from_epsg(4326).to_wkt() # crsデータを渡す
+    new_data.to_file("to_path.shp") #shpファイルの作成 
+
+- .prjファイルを作るのに、crsの情報が必要のようだ
+    - そういうのが入っているのね・・・
+- pyprojパッケージのCRSクラスはrasterioをもとに作られているようだ
+    - rasterioはMapboxがが作っている？　https://github.com/mapbox/rasterio/blob/master/docs/index.rst
+    - rasterioはrasterデータにアクセスするためのパッケージ
+    - mapbox凄いなぁ　https://github.com/mapbox
+
+## Lesson3 
+- geopandasのドキュメントを読むのも勉強になりそう（当たり前か
+    - https://geopandas.org/data_structures.html
+
+### Geocoding
+
+- 住所を位置データに　Geopandasとgeopyを用いて
+    - geopy : https://geopy.readthedocs.io/en/stable/
+        - geopyは下のやつのもっといろんなソースを使えるモノっぽい。
+    - geocoder: https://geocoder.readthedocs.io/ 
+        - googleのAPIでシンプルに位置データ取れるっぽい
+
+- geopandasのtools geocodeを使うと、経度緯度情報から住所を出してくれる！！
+- 大量にやる場合、geopyのRateLimiterを活用しよう
+
+### Table join 
+
+- Pandas : https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html
+    - いまいち各種の違いが分かっていない。軽く読むべきだな
+
+- Table joins are really common procedures when doing GIS analyses. 
+    - Pandasのmergeメソッドを使えよっていています。
+    - インデックスでガチャっとやる場合は、JOINでできてしまいます。
+
+    - 多分、MERGEはコラムの合致でやる場合だな。
+
+### Point in Polygon & Intersect
+
+#### How to check if point is inside a polygon?
+
+- https://automating-gis-processes.github.io/site/master/notebooks/L3/point-in-polygon.html#How-to-check-if-point-is-inside-a-polygon?
+
+    p1 = Point(24.952242, 60.1696017)
+    p2 = Point(24.976567, 60.1612500)
+
+    coords =[(24.950899, 60.169158), (24.953492, 60.169158), (24.953510, 60.170104), (24.950958, 60.169990)]
+    poly = Polygon(coords)
+
+    p1.within(poly) #/ True
+    p2.within(poly) #/ False
+
+### Intersect
+
+- https://automating-gis-processes.github.io/site/master/notebooks/L3/point-in-polygon.html#Intersect
+
+    line_a = LineString([(0,0), (1,1)])
+    line_b = LineString([(1,1), (0,2)])
+    line_a.intersect(line_b) #/ True
+    line_a.touches(line_a) # / False
+
+- ここは面白いが、データがどこにあるのかわからない。
+
+- spatial index that can significantly boost the performance of your spatial queries.
+    - R-tree https://en.wikipedia.org/wiki/R-tree
+
+- spatialindex : Rtreeの構造を持つ
+    - 空間インデックス：　https://desktop.arcgis.com/ja/arcmap/10.3/manage-data/geodatabases/
+    an-overview-of-spatial-indexes-in-the-geodatabase.html
+    - ええ感じに空間を分けてくれるっぽい
+- https://automating-gis-processes.github.io/site/master/notebooks/L3/spatial_index.html
+    - ここは重要。複数回確認する。
+
+- 空間インデックスを作る
+- それを活用して、候補を絞る
+- その候補を用いて、抽出する
+- これでかなりの時間を節約できる
+
+- gpd.sjoin(): 空間で結合する
+- df.merge(dff, on="colname"): データフレームを結合する
+    - Spatial join / 次の授業課題だった 
+
+
+
 
 
 

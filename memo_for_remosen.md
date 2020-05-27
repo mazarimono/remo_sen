@@ -47,7 +47,7 @@ https://www.tellusxdp.com/ja/
 
 ### 気になった記事
 - 国際航業　画像解析　https://www.jasdim.or.jp/gijutsu/jisuberi_joho/kaiseki/gazou/gazou.html
-
+- ESRI Webマッピングアプリ開発に便利なツール　TypeScriptを使用したアプリ
 
 ## メモ
 

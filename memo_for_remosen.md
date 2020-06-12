@@ -12,7 +12,8 @@ https://earthengine.google.com/
 - faq https://earthengine.google.com/faq/
 - google earth engine advent calendar https://qiita.com/advent-calendar/2018/googleearth
 - ゼロから始める衛星画像解析　https://jkatagi.github.io/contents/google_earth_engine/
-- Hiroki MIZUOCHI Googole Earth Engine って？　https://sites.google.com/site/mizuochipublic/%E5%AE%9F%E8%B7%B5%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84-remote-sensing-tutorials/google-earth-engine%E5%85%A5%E9%96%80/1-google-earth-engine%E3%81%A3%E3%81%A6?authuser=0
+- Hiroki MIZUOCHI Googole Earth Engine って？　https://sites.google.com/site/mizuochipublic/home?authuser=0
+
 
 ### Tellus
 
